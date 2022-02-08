@@ -8,7 +8,7 @@ import Messaging from "react-cssfx-loading/lib/Messaging";
 import * as MdIcons from "react-icons/md";
 import * as FcIcons from "react-icons/fc";
 function Home(props) {
-  const url = "http://188.166.77.75:8010/xrep_transfer/transactions/";
+  const url = "https://188.166.77.75:8010/xrep_transfer/transactions/";
 
   const [transactions, setTransactions] = useState([
     "Transaction1",
