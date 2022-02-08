@@ -8,28 +8,29 @@ import Messaging from "react-cssfx-loading/lib/Messaging";
 import * as MdIcons from "react-icons/md";
 import * as FcIcons from "react-icons/fc";
 function Home(props) {
-  const url = `https://newsapi.org/v2/top-headlines?country=us&category=${props.execute()}&apiKey=dda2bbd515a64537b0176995b68f3eba`;
+  const url = "http://188.166.77.75:8010/xrep_transfer/transactions/";
 
-  const [news, setNews] = useState(null);
+  const [transactions, setTransactions] = useState(["ABEBE", "KEBEDE"]);
 
   useEffect(() => {
     axios
       .get(url)
       .then((response) => {
-        setNews(response.data);
+        console.log(response);
+        // setTransactions(response.data);
       })
       .catch((err) => {
-        console.log(err);
+        return "";
       });
   }, [url]);
-  if (news) {
+  if (transactions) {
     return (
       <Fragment>
         <div className="mainColor">
           <div className="bg-image p-5">
-            {news.articles.map((news, index) => {
+            {transactions.map((transactions, index) => {
               return (
-                <div class="card mb-3">
+                <div class="card mb-3" key={index}>
                   <div class="row g-0">
                     <div class="col-md-4">
                       <img
